@@ -1,0 +1,115 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Central Theme Variable System */
+  --color-primary: #0D0D0D;        /* Deep Charcoal / Onyx Black */
+  --color-secondary: #161616;      /* Dark Surface / Elevation */
+  --color-accent: #C6A15B;         /* Luxury Antique Gold */
+  --color-accent-light: #D8BD7A;   /* Soft Gold Hover */
+  --color-accent-dark: #A4813C;    /* Deep Antique Gold */
+  --color-background: #FAF8F5;    /* Warm Ivory / Soft Beige */
+  --color-surface: #FFFFFF;       /* Pure Surface White */
+  --color-surface-dark: #121212;  /* Dark Surface */
+  --color-text: #1C1B1A;          /* Charcoal Body Text */
+  --color-text-light: #6E6B65;    /* Muted Warm Grey */
+  --color-dark-text: #FAF8F5;     /* Warm Ivory on Dark Background */
+  --color-border: rgba(198, 161, 91, 0.22); /* Soft Antique Gold Border */
+  --color-border-gold: #C6A15B;   /* Solid Gold Accent Border */
+  --color-hover: #1A1918;
+
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic: 'Amiri', 'Traditional Arabic', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* RTL Layout Support */
+html[dir="rtl"] {
+  font-family: var(--font-arabic), var(--font-sans);
+  text-align: right;
+}
+
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-light);
+}
+
+/* Gold Accent Dividers & Lines */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+}
+
+.gold-border-glow {
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+.gold-border-glow:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px -2px rgba(198, 161, 91, 0.25);
+}
+
+/* Glassmorphism Header */
+.glass-header {
+  background: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Subtle Premium Keyframe Animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
