@@ -24,7 +24,8 @@ const slides: Slide[] = [
     titleKey: 'hero_title_1',
     subtitleKey: 'hero_subtitle_1',
     ctaText: 'EXPLORE COLLECTION',
-    ctaLink: '/products',
+    ctaLink: '/',
+    // ctaLink: '/products',
   },
   {
     id: 2,
@@ -33,7 +34,8 @@ const slides: Slide[] = [
     titleKey: 'hero_title_2',
     subtitleKey: 'hero_subtitle_2',
     ctaText: 'VIEW BONE INLAY',
-    ctaLink: '/products?category=bone-inlay',
+    ctaLink: '/',
+    // ctaLink: '/products?category=bone-inlay',
   },
   {
     id: 3,
@@ -42,7 +44,8 @@ const slides: Slide[] = [
     titleKey: 'hero_title_3',
     subtitleKey: 'hero_subtitle_3',
     ctaText: 'VIEW HORN DECOR',
-    ctaLink: '/products?category=horn-handicrafts',
+    ctaLink: '/',
+    // ctaLink: '/products?category=horn-handicrafts',
   },
   {
     id: 4,
@@ -106,9 +109,8 @@ export const HeroSlider: React.FC<{ onOpenInquiry: () => void }> = ({ onOpenInqu
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            }`}
         >
           <Image
             src={slide.image}
@@ -176,11 +178,10 @@ export const HeroSlider: React.FC<{ onOpenInquiry: () => void }> = ({ onOpenInqu
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`h-1.5 transition-all duration-300 rounded-full ${
-                idx === currentSlide
-                  ? 'w-10 bg-[var(--color-accent)]'
-                  : 'w-3 bg-white/40 hover:bg-white/70'
-              }`}
+              className={`h-1.5 transition-all duration-300 rounded-full ${idx === currentSlide
+                ? 'w-10 bg-[var(--color-accent)]'
+                : 'w-3 bg-white/40 hover:bg-white/70'
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}

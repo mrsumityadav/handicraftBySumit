@@ -99,7 +99,8 @@ export const Header: React.FC = () => {
               onMouseEnter={() => setMegaMenuOpen(true)}
               onMouseLeave={() => setMegaMenuOpen(false)}
             >
-              <Link href="/products" className={`flex items-center gap-1 group ${navLinkClass}`}>
+              {/* products */}
+              <Link href="/" className={`flex items-center gap-1 group ${navLinkClass}`}>
                 <span>{t('nav_products')}</span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 text-black group-hover:text-[var(--color-accent)] transition-transform duration-200 ${megaMenuOpen ? 'rotate-180' : ''
@@ -108,7 +109,7 @@ export const Header: React.FC = () => {
               </Link>
 
               {/* Mega Menu Overlay Container */}
-              {megaMenuOpen && (
+              {/* {megaMenuOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[950px] bg-[var(--color-secondary)] border border-[var(--color-border-gold)] rounded-lg shadow-2xl p-6 text-[var(--color-dark-text)] grid grid-cols-4 gap-6 animate-fade-in-scale z-50 mt-1">
                   {siteConfig.productTaxonomy.map((cat) => (
                     <div key={cat.slug} className="space-y-2">
@@ -146,10 +147,13 @@ export const Header: React.FC = () => {
                     </Link>
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
 
-            <Link href="/about-us" className={navLinkClass}>
+            {/* <Link href="/about-us" className={navLinkClass}>
+              {t('nav_about')}
+            </Link> */}
+            <Link href="/" className={navLinkClass}>
               {t('nav_about')}
             </Link>
 

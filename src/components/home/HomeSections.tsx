@@ -161,9 +161,10 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onOpenInquiry }) => 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {collections.map((cat) => (
+            // /products?category=${cat.slug}
             <Link
               key={cat.slug}
-              href={`/products?category=${cat.slug}`}
+              href={`/`}
               className="group relative h-80 rounded-lg overflow-hidden shadow-lg border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all duration-300"
             >
               <Image
@@ -230,8 +231,9 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onOpenInquiry }) => 
                 </li>
               </ul>
               <div className="pt-4">
+                {/* /products */}
                 <Link
-                  href="/products"
+                  href="/"
                   className="px-8 py-3.5 bg-[var(--color-accent)] text-[var(--color-primary)] font-bold text-xs uppercase tracking-wider rounded hover:bg-[var(--color-accent-light)] transition-colors inline-flex items-center gap-2"
                 >
                   <span>VIEW FULL CATALOG</span>
@@ -300,9 +302,10 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onOpenInquiry }) => 
               { name: 'BRASS & METALS', img: '/images/materials/metal.jpg', query: 'metal' },
               { name: 'MOTHER OF PEARL', img: '/images/materials/mop.jpg', query: 'mother' },
             ].map((mat) => (
+              // /products?search=${encodeURIComponent(mat.query)}
               <Link
                 key={mat.name}
-                href={`/products?search=${encodeURIComponent(mat.query)}`}
+                href={`/`}
                 className="group relative h-48 rounded overflow-hidden shadow border border-[var(--color-border)]"
               >
                 <Image
@@ -474,9 +477,8 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onOpenInquiry }) => 
               >
                 <span>{faq.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[var(--color-accent)] transition-transform ${
-                    openFaq === idx ? 'rotate-180' : ''
-                  }`}
+                  className={`w-5 h-5 text-[var(--color-accent)] transition-transform ${openFaq === idx ? 'rotate-180' : ''
+                    }`}
                 />
               </button>
               {openFaq === idx && (
